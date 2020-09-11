@@ -1,0 +1,7 @@
+Credentials cache: API:46B1643E-77A5-46DB-888A-7E5178277BEB
+        Principal: ybrutout@S19.BE
+
+  Issued                Expires               Principal
+Sep  9 06:58:32 2020  Sep  9 16:58:32 2020  krbtgt/S19.BE@S19.BE
+Sep  9 06:58:33 2020  Sep  9 16:58:32 2020  HTTP/san-ssd.s19.be@S19.BE
+
