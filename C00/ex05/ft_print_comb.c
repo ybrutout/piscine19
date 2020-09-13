@@ -6,13 +6,13 @@
 /*   By: ybrutout <ybrutout@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/09/11 19:12:56 by ybrutout          #+#    #+#             */
-/*   Updated: 2020/09/12 20:59:38 by ybrutout         ###   ########.fr       */
+/*   Updated: 2020/09/13 17:10:33 by ybrutout         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <unistd.h>
 
-void ft_putchar(char c)
+void    ft_putchar(char c)
 {
 	write(1, &c, 1);
 }
@@ -52,6 +52,5 @@ void ft_print_comb(void)
 
 int     main(void)
 {
-    ft_print_comb();
-    return (0);
+    
 }

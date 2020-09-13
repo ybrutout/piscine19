@@ -1,26 +1,31 @@
+#include <unistd.h>
 
-#include <stdio.h>
+void	ft_putchar(char c)
+{
+	write(1, &c, 1);
+}
 
-a = '0';
-	while(a <= '9')
+void	ft_putnbr(int nb)
+{
+	unsigned int n;
+
+	if (nb < 0)
 	{
-		b = '0';
-		while( b <= '9')
-		{
-			ft_putchar(a);
-			ft_putchar(b);
-			if (a == '9' && b == '9')
-			{
-				;
-			}
-			else
-			{
-				ft_putchar(',');
-				ft_putchar(' ');
-			}
-		b++;
-		}
-	a++;
-	}	
+		ft_putchar('-');
+		n = -nb;
 	}
+	else
+		n = nb;
+	if (n > 9)
+	{
+		ft_putnbr(n / 10);
+		n %= 10;
+	}
+	ft_putchar(n + '0');
+}
+
+int	main(void)
+{
+	ft_putnbr(-2147483647);
+	return (0);
 }
