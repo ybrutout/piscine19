@@ -6,7 +6,7 @@
 /*   By: ybrutout <ybrutout@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/09/13 07:56:35 by ybrutout          #+#    #+#             */
-/*   Updated: 2020/09/13 08:34:47 by ybrutout         ###   ########.fr       */
+/*   Updated: 2020/09/13 14:33:18 by ybrutout         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,21 +17,29 @@ void	ft_putchar(char c)
 	write(1, &c, 1);
 }
 
-void	ft_putnbr(int nb)
+void ft_putnbr(int nb)
 {
-	unsigned int n;
+	long int b;
 
-	if (nb < 0)
+	b = nb; 
+	if(b < 0)
 	{
+		b = - nb;
 		ft_putchar('-');
-		n = -nb;
-	}
-	else
-		n = nb;
-	if (n > 9)
+	}	
+	else 
 	{
-		ft_putnbr(n / 10);
-		n %= 10;
+		a = nb
+		if (a >10)
+		{
+			ft_putchar(48 + )
+		}
+		
 	}
-	ft_putchar(n + '0');
+}
+
+int		main(void)
+{
+	ft_putnbr(-4244564656);
+	return (0);
 }

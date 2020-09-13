@@ -1,14 +1,26 @@
 
 #include <stdio.h>
 
-
-
-int main()
-{
-    int chiffre[5] = {5, 2, 3, 4, 5};
-    int i;
-
-    i = -1;
-    
-    printf("%d\n", *chiffre);
+a = '0';
+	while(a <= '9')
+	{
+		b = '0';
+		while( b <= '9')
+		{
+			ft_putchar(a);
+			ft_putchar(b);
+			if (a == '9' && b == '9')
+			{
+				;
+			}
+			else
+			{
+				ft_putchar(',');
+				ft_putchar(' ');
+			}
+		b++;
+		}
+	a++;
+	}	
+	}
 }
