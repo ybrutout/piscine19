@@ -1,27 +1,27 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strupcase.c                                     :+:      :+:    :+:   */
+/*   ft_strlowcase.c                                    :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: ybrutout <ybrutout@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2020/09/15 19:34:07 by ybrutout          #+#    #+#             */
-/*   Updated: 2020/09/15 20:51:29 by ybrutout         ###   ########.fr       */
+/*   Created: 2020/09/15 20:52:35 by ybrutout          #+#    #+#             */
+/*   Updated: 2020/09/15 21:00:59 by ybrutout         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <stdio.h> 
+#include <stdio.h>
 
-char	*ft_strupcase(char *str)
+char	*ft_strlowcase(char *str)
 {
-	int i;
+	int i; 
 
-	i = 0;
-	while (str[i] != '\0')
+	i = 0; 
+	while (str[i])
 	{
-		if (str[i] >= 'a' && str[i] <= 'z')
+		if (str[i] >= 'A' && str[i] < 'Z')
 		{
-			str[i] = str[i] - 32;
+			str[i] = str[i] + 32;
 		}
 		i++;
 	}
@@ -30,9 +30,9 @@ char	*ft_strupcase(char *str)
 
 int		main(void)
 {
-	char str[100] = "24545oiu87ighethgrFSJDTH";
+	char str[100]= "HELLOLESFILLES";
 
-	ft_strupcase(str);
+	ft_strlowcase(str);
 	printf("%s", str);
 	return (0);
 }
