@@ -6,7 +6,7 @@
 /*   By: ybrutout <ybrutout@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/09/14 20:19:17 by ybrutout          #+#    #+#             */
-/*   Updated: 2020/09/14 22:32:21 by ybrutout         ###   ########.fr       */
+/*   Updated: 2020/09/15 07:04:37 by ybrutout         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -34,11 +34,10 @@ void	ft_rev_int_tab(int *tab, int size)
 	tab[size] = '\0';
 }
 
-int	main(void)
+int		main(void)
 {
-	int tab[5] = {5, 4, 3, 2, 1};
+	int tab[5]= {5, 4, 3, 2, 1};
 	int i;
-
 	i = 0;
 	ft_rev_int_tab(tab, 5);
 	while (tab[i])

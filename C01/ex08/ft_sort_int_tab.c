@@ -1,49 +1,39 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   test.c                                             :+:      :+:    :+:   */
+/*   ft_sort_int_tab.c                                  :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: ybrutout <ybrutout@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2020/09/15 06:51:47 by ybrutout          #+#    #+#             */
-/*   Updated: 2020/09/15 06:52:31 by ybrutout         ###   ########.fr       */
+/*   Created: 2020/09/15 07:06:33 by ybrutout          #+#    #+#             */
+/*   Updated: 2020/09/15 07:25:24 by ybrutout         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <unistd.h>
-#include <stdio.h>
 
-void	ft_rev_int_tab(int *tab, int size)
+void	ft_sort_int_tab(int *tab, int size)
 {
-	int i;
-	int d;
+	int a;
+	int b;
 	int c;
-	int j;
 
-	i = 0;
-	j = size;
-	while (i <= size / 2)
+	a = 0;
+	b = a + 1;
+	while (a < size)
 	{
-		c = tab[i];
-		d = tab[j];
-		tab[i] = d;
-		tab[j] = c;
-		i++;
-		j--;
+		if (tab[a] > tab[b])
+		{
+			c = tab[a];
+			tab[a] = tab[b];
+			tab[b] = c;
+			a = 0;
+			b = a + 1;
+		}
+		else
+		{
+			a = a + 1;
+			b = a + 1;
+		}
 	}
-}
-
-int	main(void)
-{
-	int tab[5] = {5, 4, 3, 2, 1};
-	int i;
-
-	i = 0;
-	ft_rev_int_tab(tab, 6);
-	while (tab[i])
-	{
-		printf("%d,", tab[i]);
-		i++;
-	}
-	return (0);
 }
