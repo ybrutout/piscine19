@@ -1,40 +1,39 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strncpy.c                                       :+:      :+:    :+:   */
+/*   ft_str_is_alpha.c                                  :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: ybrutout <ybrutout@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2020/09/15 09:38:56 by ybrutout          #+#    #+#             */
-/*   Updated: 2020/09/15 13:44:10 by ybrutout         ###   ########.fr       */
+/*   Created: 2020/09/15 12:44:06 by ybrutout          #+#    #+#             */
+/*   Updated: 2020/09/15 18:17:55 by ybrutout         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <unistd.h>
 #include <stdio.h>
 
-char	*ft_strncpy(char *dest, char *src, unsigned int n)
+int	ft_str_is_alpha(char *str)
 {
-	unsigned int i;
+	int i;
 
 	i = 0;
-	while (i < n)
+	while (str[i] != '\0')
 	{
-		dest[i] = src[i];
+		if (str[i] < 'A' || (str[i] > 'Z' && str[i] < 'a') || str[i] > 'z')
+		{
+			return (0);
+		}
 		i++;
 	}
-	dest[n + 1] = '\0';
-	return (dest);
+	return (1);
 }
 
-int		main(void)
+int	main(void)
 {
-	char dest[] = "yannah";
-	char src[] = "nahamalameilleuredemessoeurs";
-	unsigned int n;
+	char *str;
 
-	n = 10;
-	ft_strncpy(dest, src, n);
-	printf("%s" ,dest);
-	return(0);
+	str = "bhefwhTYFSuughvd43543454";
+	printf("should be 1: %d", ft_str_is_alpha(str));
+	return (0);
 }
