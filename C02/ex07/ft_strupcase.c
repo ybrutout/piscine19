@@ -1,39 +1,18 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_str_is_uppercase.c                              :+:      :+:    :+:   */
+/*   ft_strupcase.c                                     :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: ybrutout <ybrutout@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2020/09/15 18:44:51 by ybrutout          #+#    #+#             */
-/*   Updated: 2020/09/15 19:01:54 by ybrutout         ###   ########.fr       */
+/*   Created: 2020/09/15 19:34:07 by ybrutout          #+#    #+#             */
+/*   Updated: 2020/09/15 19:37:44 by ybrutout         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <stdio.h>
+#include <stdio.h> 
 
-int		ft_str_is_uppercase(char *str)
+char	*ft_strupcase(char *str)
 {
-	int a;
-
-	a = 0;
-	while (str[a])
-	{
-		if (str[a] < 'A' || str[a] > 'Z')
-		{
-			return (0);
-		}
-		a++;
-	}
-	return (1);
-}
-
-int		main(void)
-{
-	char *str;
-
-	str = "";
-	ft_str_is_uppercase(str);
-	printf("%d", ft_str_is_uppercase(str));
-	return (0);
+	while
 }

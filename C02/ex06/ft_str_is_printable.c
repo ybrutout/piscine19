@@ -1,29 +1,29 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_str_is_uppercase.c                              :+:      :+:    :+:   */
+/*   ft_str_is_printable.c                              :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: ybrutout <ybrutout@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2020/09/15 18:44:51 by ybrutout          #+#    #+#             */
-/*   Updated: 2020/09/15 19:01:54 by ybrutout         ###   ########.fr       */
+/*   Created: 2020/09/15 19:15:47 by ybrutout          #+#    #+#             */
+/*   Updated: 2020/09/15 19:32:31 by ybrutout         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <stdio.h>
 
-int		ft_str_is_uppercase(char *str)
+int		ft_str_is_printable(char *str)
 {
-	int a;
+	int i;
 
-	a = 0;
-	while (str[a])
+	i = 0;
+	while (str[i])
 	{
-		if (str[a] < 'A' || str[a] > 'Z')
+		if (str[i] <= 31 && str[i] >= 0)
 		{
 			return (0);
 		}
-		a++;
+		i++;
 	}
 	return (1);
 }
@@ -32,8 +32,8 @@ int		main(void)
 {
 	char *str;
 
-	str = "";
-	ft_str_is_uppercase(str);
-	printf("%d", ft_str_is_uppercase(str));
+	str = "vdewu\nouwcd2565413.,?\t";
+	ft_str_is_printable(str);
+	printf("%d", ft_str_is_printable(str));
 	return (0);
 }
