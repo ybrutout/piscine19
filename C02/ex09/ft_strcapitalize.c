@@ -6,65 +6,59 @@
 /*   By: ybrutout <ybrutout@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/09/15 21:03:23 by ybrutout          #+#    #+#             */
-/*   Updated: 2020/09/16 09:11:31 by ybrutout         ###   ########.fr       */
+/*   Updated: 2020/09/16 11:55:04 by ybrutout         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <stdio.h>
 
-int		ft_s_lowal(char *s)
+int		ft_check(char *s, int param)
 {
-	return (*s >= 'a' && *s <= 'z');
+	if (param == 0)
+		return (*s >= 'a' && *s <= 'z');
+	if (param == 1)
+		return (*s >= 'A' && *s <= 'Z');
+	if (param == 2)
+		return (*s >= '0' && *s <= '9');
+	if (param == 3)
+		if (*s < 48 || (*s > 57 && *s < 65) || (*s > 90 && *s < 97) || *s > 122)
+			return (1);
+	if (param == 4)
+		return ((*s >= 'a' && *s <= 'z') || (*s >= 'A' && *s <= 'Z'));
+	return (0);
 }
 
-int		ft_s_upal(char *s)
+char	ft_if(char *str, int i)
 {
-	return (*s >= 'A' && *s <= 'Z');
-}	
-
-int		ft_s_digit(char *s)
-{
-	return (*s >= '0' && *s <= '9');
-}
-
-int		ft_s_other(char *s)
-{
-	return (*s < '0' || (*s > '9' && *s < 'A') || (*s > 'Z' && *s < 'a') ||  *s > 'z');
+	if (ft_check(&str[i], 1) || ft_check(&str[i], 0))
+	{
+		if (str[i] == str[0])
+		{
+			if (ft_check(&str[i], 0))
+				str[i] = str[i] - 32;
+		}
+		else if (ft_check(&str[i - 1], 4) || ft_check(&str[i - 1], 2))
+		{
+			if (ft_check(&str[i], 1))
+				str[i] = str[i] + 32;
+		}
+		else if (ft_check(&str[i - 1], 3))
+		{
+			if (ft_check(&str[i], 0))
+				str[i] = str[i] - 32;
+		}
+	}
+	return (*str);
 }
 
 char	*ft_strcapitalize(char *str)
 {
-	unsigned int i;
-	char *s;
-	
-	s = str;
+	int i;
+
 	i = 0;
-	while (s[i] != '\0')
+	while (str[i] != '\0')
 	{
-		if (ft_s_upal(s) || ft_s_lowal(s))
-		{
-			if (i == 0)
-			{
-				if (ft_s_lowal(s))
-				{
-					s[i] = s[i] - 32;
-				}
-			}
-			else if  (ft_s_upal(s -1) || ft_s_lowal(s - 1) || ft_s_digit(s - 1))
-			{
-				if (ft_s_lowal(s))
-				{
-					s[i] = s[i] - 32;
-				}
-			}
-			else if (ft_s_upal(s - 1) || ft_s_lowal(s - 1) || ft_s_digit(s - 1))
-			{
-				if (ft_s_upal(s))
-				{
-					s[i] = s[i] + 32;
-				}
-			}
-		}
+		ft_if(str, i);
 		i++;
 	}
 	return (str);
@@ -72,7 +66,7 @@ char	*ft_strcapitalize(char *str)
 
 int		main(void)
 {
-	char str[30] = "bonJOUr,.,comMEnt vA ? 19ecole";
+	char str[100] = "bonJOUr,.,comMEnt vA ? 19ecole hel00Nahama <><>yT ";
 
 	printf("C'était : %s\n", str);
 	ft_strcapitalize(str);
