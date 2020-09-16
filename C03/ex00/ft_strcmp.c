@@ -6,7 +6,7 @@
 /*   By: ybrutout <ybrutout@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/09/16 16:28:15 by ybrutout          #+#    #+#             */
-/*   Updated: 2020/09/16 20:32:02 by ybrutout         ###   ########.fr       */
+/*   Updated: 2020/09/16 22:06:54 by ybrutout         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -36,13 +36,13 @@ int		ft_strcmp(char *s1, char *s2)
 
 int		main(void)
 {
-	char s1[30] = "coéle";
-	char s2[30] = "cole";
-	char s3[30] = "ctucouélesfilles";
+	char s1[30] = "coucoulesfilles";
+	char s2[30] = "cnucoulesfilles";
+	char s3[30] = "coucoulesfilles";
 	char s4[30] = "coucoulesfilles";
 	char s5[30] = "";
 	char s6[30] = "";
-	char s7[30] = "coucoulesfiéllesyannah";
+	char s7[30] = "coucoulesfillesyannah";
 
 	printf("solution (-) = %d\n", ft_strcmp(s1, s2));
 	printf("solution (+) = %d\n", ft_strcmp(s1, s3));
