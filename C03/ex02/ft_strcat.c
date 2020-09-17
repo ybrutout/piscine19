@@ -6,7 +6,7 @@
 /*   By: ybrutout <ybrutout@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/09/16 21:57:23 by ybrutout          #+#    #+#             */
-/*   Updated: 2020/09/17 08:15:50 by ybrutout         ###   ########.fr       */
+/*   Updated: 2020/09/17 09:21:22 by ybrutout         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,7 +21,6 @@ char	*ft_strcat(char *dest, char *src)
 
 	i = 0;
 	j = 0;
-
 	while (dest[i] != '\0')
 	{
 		i++;
