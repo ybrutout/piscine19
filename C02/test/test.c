@@ -6,7 +6,7 @@
 /*   By: ybrutout <ybrutout@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/09/17 15:11:41 by ybrutout          #+#    #+#             */
-/*   Updated: 2020/09/17 16:08:21 by ybrutout         ###   ########.fr       */
+/*   Updated: 2020/09/17 17:20:32 by ybrutout         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,13 +15,14 @@
 
 int				main(void)
 {
-	char dest[25] = "HelloNahama";
-	char src[40] = "HelloLoohan et Nahama";
+	char dest[10] = "yannah";
+	char src[10] = "loohan";
 	unsigned int size;
 
-	size = 10;
-	printf("C'était : %s\n", dest);
-	strlcpy(dest, src, size);
-	printf("C'est : %s\n", dest);
-	return (0);
+	size = 5;
+	printf("dest = %s\n", dest);
+	printf("src = %s\n", src);
+	printf("retourne : %lu \n", ft_strlcat(dest, src, size));
+	printf("dest = %s", dest);
+	return(0);
 }

@@ -6,21 +6,24 @@
 /*   By: ybrutout <ybrutout@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/09/16 17:25:25 by ybrutout          #+#    #+#             */
-/*   Updated: 2020/09/17 15:35:00 by ybrutout         ###   ########.fr       */
+/*   Updated: 2020/09/17 18:08:01 by ybrutout         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 
+#include <string.h> 
 #include <stdio.h>
-#include <string.h>
 
-int		main(void)
+int				main(void)
 {
-	char base[21] = "coucou";
-	char s1[11] = "quoi";
-	
+	char dest[20] = "yannah";
+	char src[10] = "loohan";
+	unsigned int size;
 
-	printf("base : %s\n", base);
-	printf("s1 : %s\n", s1);
-	printf("base et s1 %s\n", strcat(base, s1));
+	size = 5;
+	printf("dest = %s\n", dest);
+	printf("src = %s\n", src);
+	printf("retourne : %lu \n", strlcat(dest, src, size));
+	printf("dest = %s", dest);
+	return(0);
 }
