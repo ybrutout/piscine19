@@ -1,26 +1,22 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   test.c                                             :+:      :+:    :+:   */
+/*   strlcat.c                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: ybrutout <ybrutout@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2020/09/16 17:25:25 by ybrutout          #+#    #+#             */
-/*   Updated: 2020/09/17 11:39:15 by ybrutout         ###   ########.fr       */
+/*   Created: 2020/09/17 11:16:39 by ybrutout          #+#    #+#             */
+/*   Updated: 2020/09/17 11:18:37 by ybrutout         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-
 #include <stdio.h>
+#include <unistd.h>
 #include <string.h>
 
-int		main(void)
+unsigned int ft_strlcat(char *dest, char *src, unsigned int size)
 {
-	char str[20] = "bionifjourbifewbjl";
-	char to_find[20] = "rbifewbjljdvbjbsj";
-	
-	printf("str %s\n", str);
-	printf("to_find %s\n", to_find);
-	printf("pattern %s\n", strstr(str, to_find));
-	return(0);
+
 }
+
+int

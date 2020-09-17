@@ -6,7 +6,7 @@
 /*   By: ybrutout <ybrutout@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/09/17 09:23:49 by ybrutout          #+#    #+#             */
-/*   Updated: 2020/09/17 11:05:57 by ybrutout         ###   ########.fr       */
+/*   Updated: 2020/09/17 12:26:13 by ybrutout         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,21 +19,31 @@ char	*ft_strstr(char *str, char *to_find)
 	unsigned int val_str;
 	unsigned int size_to_find;
 	unsigned int val_to_find;
+	unsigned int size_str;
 
 	val_str = 0;
 	size_to_find = 0;
 	val_to_find = 0;
+	size_str = 0;
+	while (str[size_str] != '\0')
+	{
+		size_str++;
+	}
 	while (to_find[size_to_find] != '\0')
 	{
 		size_to_find++;
 	}
+	if (size_to_find > size_str)
+	{
+		return (0);
+	}
 	while (str[val_str])
 	{
-		if (str[val_str] != str[0])
+		if (str[val_str] != to_find[0])
 		{
 			val_str++;
 		}
-		else if (str[val_str] == str[0])
+		else if (str[val_str] == to_find[0])
 		{
 			val_to_find =0;
 			while (str[val_str] == to_find[val_to_find])
@@ -52,13 +62,13 @@ char	*ft_strstr(char *str, char *to_find)
 		}
 	}
 
-	return(&str[val_str - size_to_find]);
+	return(&str[val_str - size_to_find - 1]);
 }
 
 int		main(void)
 {
-	char str[20] = "bionifjourbifewbjl";
-	char to_find[5] = "bif";
+	char str[30] = "bionifjourbifewbjl";
+	char to_find[8] = "rbife";
 
 	printf("str %s\n", str);
 	printf("to_find %s\n", to_find);
