@@ -6,7 +6,7 @@
 /*   By: ybrutout <ybrutout@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/09/16 17:25:25 by ybrutout          #+#    #+#             */
-/*   Updated: 2020/09/17 11:39:15 by ybrutout         ###   ########.fr       */
+/*   Updated: 2020/09/17 15:35:00 by ybrutout         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,11 +16,11 @@
 
 int		main(void)
 {
-	char str[20] = "bionifjourbifewbjl";
-	char to_find[20] = "rbifewbjljdvbjbsj";
+	char base[21] = "coucou";
+	char s1[11] = "quoi";
 	
-	printf("str %s\n", str);
-	printf("to_find %s\n", to_find);
-	printf("pattern %s\n", strstr(str, to_find));
-	return(0);
+
+	printf("base : %s\n", base);
+	printf("s1 : %s\n", s1);
+	printf("base et s1 %s\n", strcat(base, s1));
 }

@@ -6,7 +6,7 @@
 /*   By: ybrutout <ybrutout@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/09/15 09:38:56 by ybrutout          #+#    #+#             */
-/*   Updated: 2020/09/15 13:44:10 by ybrutout         ###   ########.fr       */
+/*   Updated: 2020/09/17 16:01:25 by ybrutout         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,22 +18,26 @@ char	*ft_strncpy(char *dest, char *src, unsigned int n)
 	unsigned int i;
 
 	i = 0;
-	while (i < n)
+	while (src[i] && i < n)
 	{
 		dest[i] = src[i];
 		i++;
 	}
-	dest[n + 1] = '\0';
+	while (i < n)
+	{
+		dest[i] = '\0';
+		i++;
+	}
 	return (dest);
 }
 
 int		main(void)
 {
-	char dest[] = "yannah";
-	char src[] = "nahamalameilleuredemessoeurs";
+	char dest[20] = "yannah";
+	char src[50] = "nahamalameilleuredemessoeurs";
 	unsigned int n;
 
-	n = 10;
+	n = 20;
 	ft_strncpy(dest, src, n);
 	printf("%s" ,dest);
 	return(0);

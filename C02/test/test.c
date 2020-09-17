@@ -1,39 +1,27 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_str_is_alpha.c                                  :+:      :+:    :+:   */
+/*   test.c                                             :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: ybrutout <ybrutout@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2020/09/15 12:44:06 by ybrutout          #+#    #+#             */
-/*   Updated: 2020/09/17 15:08:32 by ybrutout         ###   ########.fr       */
+/*   Created: 2020/09/17 15:11:41 by ybrutout          #+#    #+#             */
+/*   Updated: 2020/09/17 16:08:21 by ybrutout         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <unistd.h>
+#include <string.h> 
 #include <stdio.h>
 
-int	ft_str_is_alpha(char *str)
+int				main(void)
 {
-	int i;
+	char dest[25] = "HelloNahama";
+	char src[40] = "HelloLoohan et Nahama";
+	unsigned int size;
 
-	i = 0;
-	while (str[i] != '\0')
-	{
-		if (str[i] < 'A' || (str[i] > 'Z' && str[i] < 'a') || str[i] > 'z')
-		{
-			return (0);
-		}
-		i++;
-	}
-	return (1);
-}
-
-int	main(void)
-{
-	char *str;
-
-	str = "bhefwhTYFSuughvd";
-	printf("should be 1: %d", ft_str_is_alpha(str));
+	size = 10;
+	printf("C'était : %s\n", dest);
+	strlcpy(dest, src, size);
+	printf("C'est : %s\n", dest);
 	return (0);
 }
