@@ -6,7 +6,7 @@
 /*   By: ybrutout <ybrutout@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/09/16 17:25:25 by ybrutout          #+#    #+#             */
-/*   Updated: 2020/09/16 22:10:57 by ybrutout         ###   ########.fr       */
+/*   Updated: 2020/09/17 07:54:26 by ybrutout         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,24 +16,17 @@
 
 int		main(void)
 {
-	char s1[30] = "\n";
-	char s2[30] = "\n";
-	char s3[30] = "coucouélesfilles";
-	char s4[30] = "coucoulesfilles";
-	char s5[30] = "";
-	char s6[30] = "";
-	char s7[30] = "coucoulesfilesyannah";
-	unsigned int n;
+	char base[21] = "coucou";
+	char s1[11] = "quoidebeau";
+	char s2[11] = "tuvasbien?";
+	char s3[2] = "";
 
-	n = 1;
-
-	printf("solution (-) = %d\n", strncmp(s1, s2, n));
-	printf("solution (+) = %d\n", strncmp(s1, s3, n));
-	printf("solution (0) = %d\n", strncmp(s1, s4, n));
-	printf("solution (?) = %d\n", strncmp(s1, s5, n));
-	printf("solution (?) = %d\n", strncmp(s5, s6, n));
-	printf("solution (?) = %d\n", strncmp(s6, s1, n));
-	printf("solution (?) = %d\n", strncmp(s1, s7, n));
-	printf("solution (?) = %d\n", strncmp(s7, s1, n));
-    return(0);
+	printf("base : %s\n", base);
+	printf("s1 : %s\n", s1);
+	printf("s2 : %s\n", s2);
+	printf("s3 : %s\n", s3);
+	printf("base et s1 %s\n", strcat(base, s1));
+	printf("base et s2 %s\n", strcat(base, s2));
+	printf("base et s3 %s\n", strcat(base, s3));
+	printf("s3 et base %s\n", strcat(s3, base));
 }
