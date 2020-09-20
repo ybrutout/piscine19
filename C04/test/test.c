@@ -5,25 +5,18 @@
 /*                                                    +:+ +:+         +:+     */
 /*   By: ybrutout <ybrutout@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2020/09/16 17:25:25 by ybrutout          #+#    #+#             */
-/*   Updated: 2020/09/20 10:54:58 by ybrutout         ###   ########.fr       */
+/*   Created: 2020/09/18 19:28:59 by ybrutout          #+#    #+#             */
+/*   Updated: 2020/09/20 08:10:15 by ybrutout         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <stdio.h>
-#include <unistd.h>
-#include <string.h>
+#include <stdlib.h>
 
-int				main(void)
+
+int		main(void)
 {
-	char dest[17] = "yannah";
-	char src[8] = "loohan";
-	unsigned int size;
-
-	size = 17;
-	printf("dest = %s\n", dest);
-	printf("src = %s\n", src);
-	printf("retourne : %lu \n", strlcat(dest, src, size));
-	printf("dest = %s", dest);
+	char str [50] = "23456789";
+	printf("vrai ; %d\n", atoi(str));
 	return(0);
 }

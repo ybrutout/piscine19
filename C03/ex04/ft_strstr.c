@@ -6,7 +6,7 @@
 /*   By: ybrutout <ybrutout@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/09/17 09:23:49 by ybrutout          #+#    #+#             */
-/*   Updated: 2020/09/17 12:26:13 by ybrutout         ###   ########.fr       */
+/*   Updated: 2020/09/20 12:51:27 by ybrutout         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,64 +14,69 @@
 #include <unistd.h>
 #include <string.h>
 
-char	*ft_strstr(char *str, char *to_find)
-{
-	unsigned int val_str;
-	unsigned int size_to_find;
-	unsigned int val_to_find;
-	unsigned int size_str;
+int g_vs = 0;
+int g_tf = 0;
+int g_vtf = 0;
+int g_s = 0;
 
-	val_str = 0;
-	size_to_find = 0;
-	val_to_find = 0;
-	size_str = 0;
-	while (str[size_str] != '\0')
+void	ft_count_size(char *str, char *to_find)
+{
+	while (str[g_s] != '\0')
 	{
-		size_str++;
+		g_s++;
 	}
-	while (to_find[size_to_find] != '\0')
+	while (to_find[g_tf] != '\0')
 	{
-		size_to_find++;
+		g_tf++;
 	}
-	if (size_to_find > size_str)
+}
+
+int		ft_if_size(void)
+{
+	if (g_tf > g_s)
 	{
 		return (0);
 	}
-	while (str[val_str])
+	else
 	{
-		if (str[val_str] != to_find[0])
+		return (1);
+	}
+}
+
+char	*ft_strstr(char *str, char *to_find)
+{
+	ft_count_size(str, to_find);
+	ft_if_size();
+	if (to_find [0] == '\0')
+	 	return (str);
+	while (str[g_vs])
+	{
+		if (str[g_vs] != to_find[0])
+			g_vs++;
+		else if (str[g_vs] == to_find[0])
 		{
-			val_str++;
-		}
-		else if (str[val_str] == to_find[0])
-		{
-			val_to_find =0;
-			while (str[val_str] == to_find[val_to_find])
+			g_vtf = 0;
+			while (str[g_vs] == to_find[g_vtf])
 			{
-				val_str++;
-				val_to_find++;
+				g_vs++;
+				g_vtf++;
 			}
-			if (val_to_find == size_to_find)
-			{
-				return(&str[val_str - size_to_find]);
-			}
-			else if ( val_to_find != size_to_find)
-			{
-				val_str++;
-			}
+			if (g_vtf == g_tf)
+				return (&str[g_vs - g_vtf]);
+			else if (g_vtf != g_tf)
+				g_vs++;
 		}
 	}
-
-	return(&str[val_str - size_to_find - 1]);
+	return (NULL);
 }
 
 int		main(void)
 {
-	char str[30] = "bionifjourbifewbjl";
-	char to_find[8] = "rbife";
+	char str[20] = "hello world";
+	char to_find[8] = "yanna";
 
 	printf("str %s\n", str);
 	printf("to_find %s\n", to_find);
-	printf("pattern %s\n", ft_strstr(str, to_find));
+	printf("pattern : %s\n", ft_strstr(str, to_find));
 	return(0);
 }

@@ -1,12 +1,12 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   strlcat.c                                          :+:      :+:    :+:   */
+/*   ft_strlcat.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: ybrutout <ybrutout@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/09/17 11:16:39 by ybrutout          #+#    #+#             */
-/*   Updated: 2020/09/17 18:11:32 by ybrutout         ###   ########.fr       */
+/*   Updated: 2020/09/20 10:51:49 by ybrutout         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,44 +14,46 @@
 #include <unistd.h>
 #include <string.h>
 
+void			ft_size(char *dest, char *src, int *i, int *j)
+{
+	while (dest[*i] != '\0')
+	{
+		*i = *i + 1;
+	}
+	while (src[*j] != '\0')
+	{
+		*j = *j + 1;
+	}
+}
+
 unsigned int	ft_strlcat(char *dest, char *src, unsigned int size)
 {
-	unsigned int size_dest;
-	unsigned int size_src;
-	unsigned int i;
-	unsigned int j;
-	unsigned int size_try;
+	int	sd;
+	int	ssrc;
+	int	i;
+	int	j;
+	int	size_try;
 
-	size_dest = 0;
-	size_src = 0;
+	sd = 0;
+	ssrc = 0;
 	j = 0;
-	while (dest[size_dest] != '\0')
-	{
-		size_dest++;
-	}
-	i = size_dest;
-	while (src[size_src] != '\0')
-	{
-		size_src++;
-	}
-	if (size >= size_dest + size_src - 1)
+	ft_size(dest, src, &sd, &ssrc);
+	i = sd;
+	if ((int) size >= sd + ssrc - 1)
 	{
 		while (src[j])
 		{
-			dest[size_dest] = src[j];
-			size_dest++;
+			dest[sd] = src[j];
+			sd++;
 			j++;
 		}
-		dest[size_dest] = '\0';
-		size_try = i + size_src;
+		dest[sd] = '\0';
+		size_try = i + ssrc;
 	}
-	else 
-	{
-		size_try = size_src + i -1;
-	}
+	else
+		size_try = ssrc + i - 1;
 	return (size_try);
 }
-
 
 int				main(void)
 {
@@ -59,11 +61,10 @@ int				main(void)
 	char src[10] = "loohan";
 	unsigned int size;
 
-	size = 5;
+	size = 25;
 	printf("dest = %s\n", dest);
 	printf("src = %s\n", src);
 	printf("retourne : %u \n", ft_strlcat(dest, src, size));
 	printf("dest = %s", dest);
 	return(0);
 }
-
