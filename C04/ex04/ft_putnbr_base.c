@@ -1,12 +1,12 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_putnbr.c                                        :+:      :+:    :+:   */
+/*   ft_putnbr_base.c                                   :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: ybrutout <ybrutout@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2020/09/18 16:49:44 by ybrutout          #+#    #+#             */
-/*   Updated: 2020/09/20 15:13:20 by ybrutout         ###   ########.fr       */
+/*   Created: 2020/09/20 15:03:46 by ybrutout          #+#    #+#             */
+/*   Updated: 2020/09/20 15:22:08 by ybrutout         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,7 +17,17 @@ void	ft_putchar(char c)
 	write(1, &c, 1);
 }
 
-void	ft_putnbr(int nb)
+int base_len(char *str)
+{
+    int i;
+
+    i = -1;
+    while (str[++i])
+        ;
+    return (i);
+}
+
+void	ft_putnbr_base(int nb, char *base)
 {
 	long int i;
 
@@ -27,18 +37,16 @@ void	ft_putnbr(int nb)
 		ft_putchar('-');
 		i *= -1;
 	}
-	if (i >= 10)
+	if (i > 1)
 	{
-		ft_putnbr(i / 10);
+		ft_putnbr_base(i / base_len(base), base);
 	}
-	ft_putchar(i % 10 + '0');
+	ft_putchar(base[i % base_len(base)]);
 }
 
-int		main(void)
+int main(void)
 {
-	int i;
-
-	i = 151545164;
-	ft_putnbr(i);
-	return (0);
+    char base[100] = "abcdefghij";
+    int test = -14;
+    ft_putnbr_base(test, base);
 }

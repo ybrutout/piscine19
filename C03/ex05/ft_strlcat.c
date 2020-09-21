@@ -6,7 +6,7 @@
 /*   By: ybrutout <ybrutout@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/09/17 11:16:39 by ybrutout          #+#    #+#             */
-/*   Updated: 2020/09/20 10:51:49 by ybrutout         ###   ########.fr       */
+/*   Updated: 2020/09/21 08:10:21 by ybrutout         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,11 +18,11 @@ void			ft_size(char *dest, char *src, int *i, int *j)
 {
 	while (dest[*i] != '\0')
 	{
-		*i = *i + 1;
+		*i++;
 	}
 	while (src[*j] != '\0')
 	{
-		*j = *j + 1;
+		*j++;
 	}
 }
 
@@ -48,10 +48,10 @@ unsigned int	ft_strlcat(char *dest, char *src, unsigned int size)
 			j++;
 		}
 		dest[sd] = '\0';
-		size_try = i + ssrc;
+		size_try = i + ssrc ;
 	}
 	else
-		size_try = ssrc + i - 1;
+		size_try = ssrc + i -1;
 	return (size_try);
 }
 

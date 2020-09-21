@@ -6,7 +6,7 @@
 /*   By: ybrutout <ybrutout@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/09/16 17:25:25 by ybrutout          #+#    #+#             */
-/*   Updated: 2020/09/20 10:54:58 by ybrutout         ###   ########.fr       */
+/*   Updated: 2020/09/21 07:49:21 by ybrutout         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,16 +14,13 @@
 #include <unistd.h>
 #include <string.h>
 
-int				main(void)
+int		main(void)
 {
-	char dest[17] = "yannah";
-	char src[8] = "loohan";
-	unsigned int size;
+	char str[20] = "hello world";
+	char to_find[15] = "worldghwqg";
 
-	size = 17;
-	printf("dest = %s\n", dest);
-	printf("src = %s\n", src);
-	printf("retourne : %lu \n", strlcat(dest, src, size));
-	printf("dest = %s", dest);
+	printf("str %s\n", str);
+	printf("to_find %s\n", to_find);
+	printf("pattern : %s\n", strstr(str, to_find));
 	return(0);
 }

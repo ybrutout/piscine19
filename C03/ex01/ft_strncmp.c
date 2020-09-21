@@ -5,8 +5,8 @@
 /*                                                    +:+ +:+         +:+     */
 /*   By: ybrutout <ybrutout@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2020/09/16 21:33:18 by ybrutout          #+#    #+#             */
-/*   Updated: 2020/09/16 22:12:14 by ybrutout         ###   ########.fr       */
+/*   Created: 2020/09/20 20:45:31 by ybrutout          #+#    #+#             */
+/*   Updated: 2020/09/20 21:07:09 by ybrutout         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,6 +28,8 @@ int		ft_strncmp(char *s1, char *s2, unsigned int n)
 	{
 		j = s1[i] - s2[i];
 	}
+	if (n == 0)
+		return (0);
 	else 
 	{
 		j = 0;
@@ -37,16 +39,16 @@ int		ft_strncmp(char *s1, char *s2, unsigned int n)
 
 int		main(void)
 {
-	char s1[30] = "\n";
-	char s2[30] = "\n";
+	char s1[30] = "heloonjkj";
+	char s2[30] = "\n\t";
 	char s3[30] = "coucouélesfilles";
 	char s4[30] = "coucoulesfilles";
 	char s5[30] = "";
 	char s6[30] = "";
-	char s7[30] = "coucoulesfilesyannah";
+	char s7[30] = "cou";
 	unsigned int n;
 
-	n = 1;
+	n = 0;
 
 	printf("solution (-) = %d\n", ft_strncmp(s1, s2, n));
 	printf("solution (+) = %d\n", ft_strncmp(s1, s3, n));

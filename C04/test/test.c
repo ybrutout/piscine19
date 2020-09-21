@@ -6,17 +6,20 @@
 /*   By: ybrutout <ybrutout@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/09/18 19:28:59 by ybrutout          #+#    #+#             */
-/*   Updated: 2020/09/20 08:10:15 by ybrutout         ###   ########.fr       */
+/*   Updated: 2020/09/21 08:17:59 by ybrutout         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <stdio.h>
 #include <stdlib.h>
+#include <string.h>
 
 
-int		main(void)
+
+
+int main(void)
 {
-	char str [50] = "23456789";
-	printf("vrai ; %d\n", atoi(str));
-	return(0);
+    char base[100] = "abcdefghij";
+    int test = -14;
+    ft_putnbr_base(test, base);
 }
