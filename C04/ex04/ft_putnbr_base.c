@@ -6,11 +6,16 @@
 /*   By: ybrutout <ybrutout@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/09/20 15:03:46 by ybrutout          #+#    #+#             */
-/*   Updated: 2020/09/20 15:22:08 by ybrutout         ###   ########.fr       */
+/*   Updated: 2020/09/21 09:07:58 by ybrutout         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <unistd.h>
+
+int		ft_put_error(void)
+{
+	return (0);
+}
 
 void	ft_putchar(char c)
 {
@@ -32,6 +37,7 @@ void	ft_putnbr_base(int nb, char *base)
 	long int i;
 
 	i = nb;
+	
 	if (i < 0)
 	{
 		ft_putchar('-');
