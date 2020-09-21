@@ -6,15 +6,38 @@
 /*   By: ybrutout <ybrutout@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/09/20 15:03:46 by ybrutout          #+#    #+#             */
-/*   Updated: 2020/09/21 09:07:58 by ybrutout         ###   ########.fr       */
+/*   Updated: 2020/09/21 20:00:37 by ybrutout         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <unistd.h>
+#include <stdio.h>
 
-int		ft_put_error(void)
+int		ft_if(char *str)
 {
-	return (0);
+	int i;
+	int j;
+
+	i = 0;
+	j = 1;
+	while (str[i])
+	{
+		j = i + 1;
+		while (str[i] != str[j] && str[i] > 31 && str[i] != '+' \
+					&& str[i] != '-' && str[j] != '\0')
+		{
+			j++;
+		}
+		if (str[j] == '\0')
+		{
+			i++;
+		}
+		else
+		{
+			return (0);
+		}
+	}
+	return (1);
 }
 
 void	ft_putchar(char c)
@@ -22,13 +45,13 @@ void	ft_putchar(char c)
 	write(1, &c, 1);
 }
 
-int base_len(char *str)
+int		base_len(char *str)
 {
     int i;
 
-    i = -1;
-    while (str[++i])
-        ;
+    i = 0;
+    while (str[i] != '\0')
+        i++;
     return (i);
 }
 
@@ -37,22 +60,28 @@ void	ft_putnbr_base(int nb, char *base)
 	long int i;
 
 	i = nb;
-	
-	if (i < 0)
+	if (!ft_if(base))
 	{
-		ft_putchar('-');
-		i *= -1;
+		return ;
 	}
-	if (i > 1)
+	if (base_len(base) > 1)
 	{
-		ft_putnbr_base(i / base_len(base), base);
+		if (i < 0)
+		{
+			ft_putchar('-');
+			i *= -1;
+		}
+		if (i > 1)
+		{
+			ft_putnbr_base(i / base_len(base), base);
+		}
+		ft_putchar(base[i % base_len(base)]);
 	}
-	ft_putchar(base[i % base_len(base)]);
 }
 
-int main(void)
+int		main(void)
 {
-    char base[100] = "abcdefghij";
-    int test = -14;
+    char base[20] = "0123456789";
+    int test = -314748;
     ft_putnbr_base(test, base);
 }
