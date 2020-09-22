@@ -1,30 +1,36 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_is_prime.c                                      :+:      :+:    :+:   */
+/*   ft_find_next_prime.c                               :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: ybrutout <ybrutout@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2020/09/22 20:56:46 by ybrutout          #+#    #+#             */
-/*   Updated: 2020/09/22 22:19:17 by ybrutout         ###   ########.fr       */
+/*   Created: 2020/09/22 22:20:53 by ybrutout          #+#    #+#             */
+/*   Updated: 2020/09/22 22:29:35 by ybrutout         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
+#include <stdbool.h>
 #include <stdio.h>
+#include <limits.h>
 
-int		ft_is_prime(int nb)
+int		ft_find_next_prime(int nb)
 {
 	unsigned int i;
 
 	i =  2;
-	if (nb < 2)
+	if (nb < 3)
 	{
-		return (0);
+		return (2);
 	}
+    
 	while (i * i <= (unsigned int)nb)
 	{
 		if (!(nb % i))
-			return (0);
+		{
+            nb = nb +2;
+            i = 1;
+        }
 		i = i + 1;
 	}
 	return (1);
@@ -32,12 +38,13 @@ int		ft_is_prime(int nb)
 
 int	main(void)
 {
-	int	number;
-	int number2;
-	
-	number = -2147483648;
-	number2 = 2147483647;
-	printf("is_prime(%d)\n", ft_is_prime(number));
-	printf("is_prime(%d)\n", ft_is_prime(number2));
-	return (0);
+	int	index;
+
+	index = -2;
+	while (index < 100)
+	{
+		printf("find_next_prime(%d) = %d\n", index, ft_find_next_prime(index));
+		index++;
+	}
+	printf("find_next_prime(%d) = %d\n", INT_MAX, ft_find_next_prime(INT_MAX));
 }
