@@ -6,7 +6,7 @@
 /*   By: ybrutout <ybrutout@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/09/22 20:32:23 by ybrutout          #+#    #+#             */
-/*   Updated: 2020/09/22 20:54:35 by ybrutout         ###   ########.fr       */
+/*   Updated: 2020/09/22 21:08:25 by ybrutout         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -49,5 +49,5 @@ int	main(void)
 	printf("sqrt(%d) = %d\n", 1000000, ft_sqrt(1000000));
 	printf("sqrt(%d) = %d\n", INT_MAX, ft_sqrt(INT_MAX));
 	printf("sqrt(%d) = %d\n", INT_MIN, ft_sqrt(INT_MIN));
-	printf("sqrt(%d) = %d\n", 2147395600, ft_sqrt(2147395600));
+	printf("sqrt(%d) = %d\n", 56312, ft_sqrt(56312));
 }
