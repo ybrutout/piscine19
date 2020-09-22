@@ -1,48 +1,35 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_recursive_factorial.c                           :+:      :+:    :+:   */
+/*   ft_iterative_power.c                               :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: ybrutout <ybrutout@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2020/09/22 14:24:00 by ybrutout          #+#    #+#             */
-/*   Updated: 2020/09/22 14:31:44 by ybrutout         ###   ########.fr       */
+/*   Created: 2020/09/22 14:48:24 by ybrutout          #+#    #+#             */
+/*   Updated: 2020/09/22 14:59:28 by ybrutout         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <stdio.h>
-#include <unistd.h>
 
-int		ft_recursive_factorial(int nb)
+int		ft_iterative_power(int nb, int power)
 {
-	int i;
+    int c;
 
-	i = 1;
-	if (nb < 0)
-	{
+    c = 1;
+	if (power < 0)
 		return (0);
-	}
-	if (nb == 1 || nb == 0)
-	{
+	if (power == 0 && nb == 0)	
 		return (1);
-	}
-	while (nb)
-	{
-		i = i * nb;
-		nb--;
-		ft_recursive_factorial(nb);
-	}
-	return (i);
+	while ((--power)+1)
+        c = c * nb;
+    return c;
 }
 
 int	main(void)
 {
-	int n;
-
-	n = -2;
-	while (n < 7)
-	{
-		printf("fact(%d) = %d\n", n, ft_recursive_factorial(n));
-		n++;
-	}
+	printf("10^2 = %d\n", ft_iterative_power(10, 2));
+	printf("10^0 = %d\n", ft_iterative_power(10, 0));
+	printf("10^-1 = %d\n", ft_iterative_power(10, -1));
+	printf("10^5 = %d\n", ft_iterative_power(10, 5));
 }
