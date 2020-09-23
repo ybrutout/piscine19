@@ -6,7 +6,7 @@
 /*   By: ybrutout <ybrutout@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/09/22 22:20:53 by ybrutout          #+#    #+#             */
-/*   Updated: 2020/09/22 22:29:35 by ybrutout         ###   ########.fr       */
+/*   Updated: 2020/09/23 06:54:45 by ybrutout         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,12 +18,15 @@ int		ft_find_next_prime(int nb)
 {
 	unsigned int i;
 
-	i =  2;
+	i =  3;
 	if (nb < 3)
 	{
 		return (2);
 	}
-    
+	if (nb % 2 == 0)
+	{
+		nb++;
+	}
 	while (i * i <= (unsigned int)nb)
 	{
 		if (!(nb % i))
@@ -31,9 +34,9 @@ int		ft_find_next_prime(int nb)
             nb = nb +2;
             i = 1;
         }
-		i = i + 1;
+		i++;
 	}
-	return (1);
+	return (nb);
 }
 
 int	main(void)
