@@ -6,7 +6,7 @@
 /*   By: ybrutout <ybrutout@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/09/20 15:03:46 by ybrutout          #+#    #+#             */
-/*   Updated: 2020/09/22 07:35:21 by ybrutout         ###   ########.fr       */
+/*   Updated: 2020/09/23 07:22:57 by ybrutout         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -81,7 +81,7 @@ void	ft_putnbr_base(int nb, char *base)
 
 int		main(void)
 {
-    char base[20] = "01";
-    int test = 22;
+    char base[20] = "thibaut";
+    int test = 10;
     ft_putnbr_base(test, base);
 }
