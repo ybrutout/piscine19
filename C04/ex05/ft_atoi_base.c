@@ -6,62 +6,38 @@
 /*   By: ybrutout <ybrutout@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/09/21 19:05:21 by ybrutout          #+#    #+#             */
-/*   Updated: 2020/09/22 10:00:27 by ybrutout         ###   ########.fr       */
+/*   Updated: 2020/09/24 10:52:19 by ybrutout         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <unistd.h> 
 #include <stdio.h> 
 
-int		same_base(char *str, char *base, int i, int *j)
+int		ft_if(char *str)
 {
-	while (base[j])
+	int i;
+	int j;
+
+	i = 0;
+	j = 1;
+	while (str[i])
 	{
-		if (str[i] != base[j])
+		j = i + 1;
+		while (str[i] != str[j] && str[i] > 31 && str[i] != '+' \
+					&& str[i] != '-' && str[j] != '\0')
 		{
 			j++;
 		}
-		else 
+		if (str[j] == '\0')
 		{
-			return (1);
-		}
-	}
-	return (0);
-}
-
-void	wh_space(char *str, int *i)
-{
-	int a;
-
-	a = *i;
-	while ((str[a] >= 9 && str[a] <= 13) || str[a] == ' ')
-	{
-		a++;
-	}
-	*i = a;
-}
-
-void	nb_signe(char *str, int *i, int *j)
-{
-	int a; 
-	int b;
-
-	a = *i;
-	b = *j;
-	while (str[a] == '-' || str[a] == '+')
-	{
-		if ( str[a] == '-')
-		{
-			b++;
-			a++;
+			i++;
 		}
 		else
 		{
-			a++;
+			return (0);
 		}
 	}
-	*i = a;
-	*j = b;
+	return (1);
 }
 
 int		base_len(char *str)
@@ -74,42 +50,43 @@ int		base_len(char *str)
     return (i);
 }
 
-int 	index(char *str, char *base, int i)
+int		ft_val_base(char a, char *base)
 {
-	int j; 
+	int b;
 
-	j = 0; 
-	if (str[i] != )
+	b = 0;
+	while (base[b])
+	{
+		if (a == base[b])
+			return (b);
+		b++;
+	}
+	return (-1);
 }
-
-int		expo(int nb, int puissance)
-{
-	if (puissance)
-		return (nb * expo(nb, puissance - 1));
-	return (1);
-}
-
-int		puissance()
 
 int		ft_atoi_base(char *str, char *base)
 {
 	int i; 
 	int j;
 	int n;
-	int index;
-	int posi;
+	int sizebase;
 
-	i = 0;
 	j = 0;
-	index = 0;
-	posi = 0;
-	wh_space(str, &i);
-	nb_signe(str, &i, &j);
 	n = 0;
-	while (same_base(str, base, i, &index))
+	if ((sizebase = base_len(base)) < 2)
+		return (0);
+	while ((*str >= 9 && *str <= 13) || *str == ' ')
+		str++;
+	while (*str == '-' || *str == '+')
 	{
-		i++;
-		n = index * expo(base_len(base), 
+		if ( *str == '-')
+			j = j + 1;
+		str++;
+	}
+	while ((i = ft_val_base(*str, base)) >= 0)
+	{
+		n = n * sizebase + i;
+		str++;
 	}
 	if (j % 2 == 1)
 	{
@@ -118,11 +95,12 @@ int		ft_atoi_base(char *str, char *base)
 	return (n);
 }
 
-int        main(void)
+int		main(void)
 {
-	printf("%d\n", expo(2, 2));
-	return 0;
-	char str [200] = "     \n\n\n\t\t\t\t-------++++++++++++++++++++++++++4";
-	printf("mon int vaut : %d\n", ft_atoi(str));
-	return(0);
+	printf("%d\n", ft_atoi_base("-123456", "0123456789"));
+	fflush(stdout);
+	printf("%d\n", ft_atoi_base("11110001001000000", "01"));
+	fflush(stdout);
+	printf("%d\n", ft_atoi_base("-1e240", "0123456789abcdef"));
+	fflush(stdout);
 }
