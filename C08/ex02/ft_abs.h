@@ -1,18 +1,18 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_print_alphabet.c                                :+:      :+:    :+:   */
+/*   ft_abs.h                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: ybrutout <ybrutout@student.s19.be>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2020/09/11 08:48:56 by ybrutout          #+#    #+#             */
-/*   Updated: 2020/09/24 19:34:31 by ybrutout         ###   ########.fr       */
+/*   Created: 2020/09/24 19:34:02 by ybrutout          #+#    #+#             */
+/*   Updated: 2020/09/24 19:52:38 by ybrutout         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <unistd.h>
+#ifndef FT_ABS
+# define FT_ABS
 
-void	ft_print_alphabet(void)
-{
-	write(1, "abcdefghijklmnopqrstuvwxyz", 26);
-}
+# define ABS(Value) (Value > 0) ? Value : -Value
+
+#endif
