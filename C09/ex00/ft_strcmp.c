@@ -6,12 +6,9 @@
 /*   By: ybrutout <ybrutout@student.s19.be>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/09/16 16:28:15 by ybrutout          #+#    #+#             */
-/*   Updated: 2020/09/25 07:43:56 by ybrutout         ###   ########.fr       */
+/*   Updated: 2020/09/27 10:56:15 by ybrutout         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
-
-#include <stdio.h>
-#include <string.h>
 
 int		ft_strcmp(char *s1, char *s2)
 {
@@ -32,25 +29,4 @@ int		ft_strcmp(char *s1, char *s2)
 		j = 0;
 	}
 	return (j);
-}
-
-int		main(void)
-{
-	char s1[30] = "coucoulesfilles";
-	char s2[30] = "cnucoulesfilles";
-	char s3[30] = "coucoulesfilles";
-	char s4[30] = "coucoulesfilles";
-	char s5[30] = "";
-	char s6[30] = "";
-	char s7[30] = "coucoulesfillesyannah";
-
-	printf("solution (-) = %d\n", ft_strcmp(s1, s2));
-	printf("solution (+) = %d\n", ft_strcmp(s1, s3));
-	printf("solution (0) = %d\n", ft_strcmp(s1, s4));
-	printf("solution (?) = %d\n", ft_strcmp(s1, s5));
-	printf("solution (?) = %d\n", ft_strcmp(s5, s6));
-	printf("solution (?) = %d\n", ft_strcmp(s6, s1));
-	printf("solution (?) = %d\n", ft_strcmp(s1, s7));
-	printf("solution (?) = %d\n", ft_strcmp(s7, s1));
-    return(0);
 }
