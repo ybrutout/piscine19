@@ -1,92 +1,85 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strs_to_tab.c                                   :+:      :+:    :+:   */
+/*   ft_show_tab.c                                      :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: ybrutout <ybrutout@student.s19.be>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2020/09/25 14:35:33 by ybrutout          #+#    #+#             */
-/*   Updated: 2020/09/27 08:23:06 by ybrutout         ###   ########.fr       */
+/*   Created: 2020/09/27 07:24:43 by ybrutout          #+#    #+#             */
+/*   Updated: 2020/09/27 08:57:07 by ybrutout         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
+#include <unistd.h>
 #include "ft_stock_str.h"
 
-char				*ft_strcpy(char *dest, char *src)
+void	ft_putchar(char c)
 {
-	unsigned int	i;
-
-	i = 0;
-	while (src[i] != '\0')
-	{
-		dest[i] = src[i];
-		i++;
-	}
-	dest[i] = src[i];
-	return (dest);
+	write(1, &c, 1);
 }
 
-int					ft_strlen(char *str)
+void	ft_putstr(char *str)
 {
-	int				a;
+	int a;
 
 	a = 0;
-	while (str[a])
+	while (str[a] != '\0')
 	{
+		ft_putchar(str[a]);
 		a++;
 	}
-	return (a);
 }
 
-char				*ft_strdup(char *src)
+void	ft_putnbr(int nb)
 {
-	char			*c;
-	int				i;
+	long int a;
 
-	i = ft_strlen(src);
-	c = malloc((sizeof(char)) * (i + 1));
-	if (!(c))
-		return (NULL);
-	ft_strcpy(c, src);
-	return (c);
+	a = nb;
+	if (a < 0)
+	{
+		ft_putchar('-');
+		a *= -1;
+	}
+	if (a >= 10)
+	{
+		ft_putnbr(a / 10);
+	}
+	ft_putchar(a % 10 + 48);
 }
 
-struct s_stock_str	*ft_strs_to_tab(int ac, char **av)
+void	ft_show_tab(struct s_stock_str *par)
 {
-	t_stock_str		*nstr;
-	int				i;
+	int i;
 
 	i = 0;
-	if (ac < 0)
-		ac = 0;
-	nstr = malloc((sizeof(t_stock_str)) * (ac + 1));
-	if (!(nstr))
-		return (NULL);
-	while (i < ac)
+	if (!(par))
+		;
+	while ((par[i]).str)
 	{
-		(nstr[i]).size = ft_strlen(av[i]);
-		(nstr[i]).str = av[i];
-		(nstr[i]).copy = ft_strdup(av[i]);
+		ft_putstr((par[i]).str);
+		ft_putchar('\n');
+		ft_putnbr(par->size);
+		ft_putchar('\n');
+		ft_putstr((par[i]).copy);
+		ft_putchar('\n');
 		i++;
 	}
-	(nstr[i]).str = 0;
-	return (nstr);
 }
 
-int					main(void)
+int	main(void)
 {
 	int					index;
 	int					ac;
 	char				**av;
 	struct s_stock_str	*structs;
 
-	ac = 5;
+	ac = 10;
 	av = (char **)malloc((ac + 1) * sizeof(char *));
 	index = 0;
 	while (index < ac)
 	{
 		av[index] = (char *)malloc((2 + 1) * sizeof(char));
-		av[index][0] = 'x';
+		av[index][0] = 'y';
 		av[index][1] = (char)(index + 'a');
 		av[index][2] = '\0';
 		index++;
@@ -101,4 +94,7 @@ int					main(void)
 		printf("\t|     size : %d\n", structs[index].size);
 		index++;
 	}
+	printf("---- SHOW TAB\n");
+	ft_show_tab(structs);
+	return (0);
 }
