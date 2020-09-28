@@ -6,7 +6,7 @@
 /*   By: ybrutout <ybrutout@student.s19.be>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/09/27 07:24:43 by ybrutout          #+#    #+#             */
-/*   Updated: 2020/09/28 07:40:33 by ybrutout         ###   ########.fr       */
+/*   Updated: 2020/09/28 11:26:17 by ybrutout         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -58,10 +58,15 @@ void		ft_show_tab(struct s_stock_str *par)
 	{
 		ft_putstr((par[i]).str);
 		ft_putchar('\n');
-		ft_putnbr(par->size);
+		ft_putnbr((par[i]).size);
 		ft_putchar('\n');
 		ft_putstr((par[i]).copy);
 		ft_putchar('\n');
 		i++;
 	}
+}
+
+int					main(int argc, char **argv)
+{
+	ft_show_tab(ft_strs_to_tab(argc -1, argv +1));
 }

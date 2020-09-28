@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_strjoin.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: ybrutout <ybrutout@student.42.fr>          +#+  +:+       +#+        */
+/*   By: ybrutout <ybrutout@student.s19.be>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/09/23 21:05:45 by ybrutout          #+#    #+#             */
-/*   Updated: 2020/09/24 08:28:03 by ybrutout         ###   ########.fr       */
+/*   Updated: 2020/09/28 12:20:31 by ybrutout         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -60,7 +60,8 @@ char	*ft_strjoin(int size, char **strs, char sep)
 	{
 		ft_strcpy(&dest[j], strs[i]);
 		j = j + ft_strlen(strs[i]);
-		ft_strcpy(&dest[j], &sep);
+		if ((i + 1) < size )
+			ft_strcpy(&dest[j], &sep);
 		i++;
 		j++;
 	}
@@ -80,7 +81,7 @@ int		main(void)
 	strs[1] = "1234";
 	strs[2] = "poiuic";
 	strs[3] = "1234";
-	separator = "\n";
+	separator = "-";
 	index = -1;
 	while (index < 4)
 	{
