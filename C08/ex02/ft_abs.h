@@ -6,12 +6,12 @@
 /*   By: ybrutout <ybrutout@student.s19.be>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/09/24 19:34:02 by ybrutout          #+#    #+#             */
-/*   Updated: 2020/09/24 19:52:38 by ybrutout         ###   ########.fr       */
+/*   Updated: 2020/09/28 07:34:14 by ybrutout         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef FT_ABS
-# define FT_ABS
+#ifndef FT_ABS_H
+# define FT_ABS_H
 
 # define ABS(Value) (Value > 0) ? Value : -Value
 

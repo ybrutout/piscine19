@@ -6,7 +6,7 @@
 /*   By: ybrutout <ybrutout@student.s19.be>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/09/25 14:35:33 by ybrutout          #+#    #+#             */
-/*   Updated: 2020/09/27 08:23:06 by ybrutout         ###   ########.fr       */
+/*   Updated: 2020/09/28 07:39:18 by ybrutout         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -71,34 +71,4 @@ struct s_stock_str	*ft_strs_to_tab(int ac, char **av)
 	}
 	(nstr[i]).str = 0;
 	return (nstr);
-}
-
-int					main(void)
-{
-	int					index;
-	int					ac;
-	char				**av;
-	struct s_stock_str	*structs;
-
-	ac = 5;
-	av = (char **)malloc((ac + 1) * sizeof(char *));
-	index = 0;
-	while (index < ac)
-	{
-		av[index] = (char *)malloc((2 + 1) * sizeof(char));
-		av[index][0] = 'x';
-		av[index][1] = (char)(index + 'a');
-		av[index][2] = '\0';
-		index++;
-	}
-	structs = ft_strs_to_tab(ac, av);
-	index = 0;
-	while (index < ac)
-	{
-		printf("%d\n", index);
-		printf("\t| original : $%s$ @ %p\n", structs[index].str, structs[index].str);
-		printf("\t|   copied : $%s$ @ %p\n", structs[index].copy, structs[index].copy);
-		printf("\t|     size : %d\n", structs[index].size);
-		index++;
-	}
 }
