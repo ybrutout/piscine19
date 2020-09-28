@@ -6,7 +6,7 @@
 /*   By: ybrutout <ybrutout@student.s19.be>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/09/27 07:24:43 by ybrutout          #+#    #+#             */
-/*   Updated: 2020/09/28 11:26:17 by ybrutout         ###   ########.fr       */
+/*   Updated: 2020/09/28 12:25:21 by ybrutout         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -53,7 +53,7 @@ void		ft_show_tab(struct s_stock_str *par)
 
 	i = 0;
 	if (!(par))
-		;
+		return ;
 	while ((par[i]).str)
 	{
 		ft_putstr((par[i]).str);
