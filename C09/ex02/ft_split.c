@@ -6,7 +6,7 @@
 /*   By: ybrutout <ybrutout@student.s19.be>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/09/28 17:13:41 by ybrutout          #+#    #+#             */
-/*   Updated: 2020/09/29 13:05:18 by ybrutout         ###   ########.fr       */
+/*   Updated: 2020/09/29 21:17:08 by ybrutout         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,14 +15,14 @@
 #include <stdio.h> //for test
 #include <unistd.h>
 
-int		ft_word(char *str, char *charsep, int i)
+int		ft_word(char str, char *charsep)
 {
 	int j;
 	
 	j = 0;
 	while (charsep[j])
 	{
-		if (charsep[j] == str[i])
+		if (charsep[j] == str)
 			return (1);
 		j++;
 	}
@@ -36,13 +36,13 @@ int		ft_count_word(char *str, char *charsep)
 	int i; 
 
 	i = 0;
-	inword = 0;
+	inword = 1;
 	count = 0;
 	while (str[i])
 	{
-		if (ft_word(str, charsep, i))
+		if (ft_word(str[i], charsep) == 1)
 		{
-			if (inword)
+			if (inword == 1)
 			{
 				count++;
 				inword = 0;
@@ -50,10 +50,11 @@ int		ft_count_word(char *str, char *charsep)
 		}
 		else 
 			inword = 1;
-		i++;	
+		i++;
 	}
-	if (i > 0 && (ft_word(str, charsep, i)))
-		count--;
+	if (i > 0 && !(ft_word(str[i], charsep)))
+		count++;
+
 	return (count);
 }
 
@@ -78,7 +79,7 @@ int		ft_strlen_n(char *str, char *charsep, int i)
 	count = 0;
 	while (str[i])
 	{
-		if (!(ft_word(str, charsep, i)))
+		if (!(ft_word(str[i], charsep)))
 		{
 			count++;
 			i++;
@@ -102,7 +103,7 @@ int		ft_strlen_n(char *str, char *charsep, int i)
 		return (0);	
 	while (str[++i])
 	{
-		if (!(ft_word(str, charsep, i)))
+		if (!(ft_word(str[i], charsep)))
 		{
 			nsize = ft_strlen_n(str, charsep, i);
 			if (!(tab[j] = malloc(sizeof(char) * (nsize + 1))))
@@ -121,7 +122,7 @@ int		main(void)
 	int		index;
 	char	**split;
 
-	split = ft_split("--co---uc---ou\tc-o-mme----  - n t        \t------dfytuftuu", "\t-");
+	split = ft_split("UnFnMG	RhMBUDtnWJpprh6ZC7 xzGasuTbDD nn", "gBO62");
 	index = 0;
 	printf("tab start\n");
 	while (split[index])
@@ -135,8 +136,8 @@ int		main(void)
 /*
 int		main(void)
 {
-	char str[30] = "coucou-comment!ca-va!?";
-	char charsep[5] = "-!";
+	char str[30] = "coucouzcommentzcazvaz?";
+	char charsep[5] = "z";
 	char **essais;
 	int i;
 

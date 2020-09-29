@@ -6,9 +6,11 @@
 /*   By: ybrutout <ybrutout@student.s19.be>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/09/29 13:19:17 by ybrutout          #+#    #+#             */
-/*   Updated: 2020/09/29 14:38:33 by ybrutout         ###   ########.fr       */
+/*   Updated: 2020/09/29 17:30:11 by ybrutout         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
+
+#include <stdlib.h>
 
 int		base_len(char *str)
 {
@@ -67,7 +69,13 @@ int		ft_atoi_base(char *str, char *base)
 
 char	*ft_convert_base(char *nbr, char *base_from, char base_to)
 {
-	ft_putnbr_base(ft_atoi_base(nbr, base_from), base_to);
+	int		n;
+	char	*str;
+
+	n = 0;
+	n = ft_atoi_base(nbr, base_from);
+	str = ft_putnbr_base(n, base_to);
+	return (str);
 }
 
 int main(void)
