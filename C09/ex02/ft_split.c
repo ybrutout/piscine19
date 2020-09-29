@@ -6,7 +6,7 @@
 /*   By: ybrutout <ybrutout@student.s19.be>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/09/28 17:13:41 by ybrutout          #+#    #+#             */
-/*   Updated: 2020/09/29 12:51:26 by ybrutout         ###   ########.fr       */
+/*   Updated: 2020/09/29 13:05:18 by ybrutout         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -116,12 +116,12 @@ int		ft_strlen_n(char *str, char *charsep, int i)
 	return (tab);
   }
 
-/*int		main(void)
+int		main(void)
 {
 	int		index;
 	char	**split;
 
-	split = ft_split("\t\t", "\t-");
+	split = ft_split("--co---uc---ou\tc-o-mme----  - n t        \t------dfytuftuu", "\t-");
 	index = 0;
 	printf("tab start\n");
 	while (split[index])
@@ -131,8 +131,8 @@ int		ft_strlen_n(char *str, char *charsep, int i)
 	}
 	printf("tab end\n");
 }
-*/
 
+/*
 int		main(void)
 {
 	char str[30] = "coucou-comment!ca-va!?";
@@ -149,3 +149,4 @@ int		main(void)
 	}
 	return (0);
 }
+*/

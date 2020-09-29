@@ -3,42 +3,15 @@
 /*                                                        :::      ::::::::   */
 /*   ft_atoi_base.c                                     :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: ybrutout <ybrutout@student.42.fr>          +#+  +:+       +#+        */
+/*   By: ybrutout <ybrutout@student.s19.be>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/09/21 19:05:21 by ybrutout          #+#    #+#             */
-/*   Updated: 2020/09/24 11:37:58 by ybrutout         ###   ########.fr       */
+/*   Updated: 2020/09/29 14:35:41 by ybrutout         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <unistd.h> 
 #include <stdio.h> 
-
-int		ft_if(char *str)
-{
-	int i;
-	int j;
-
-	i = 0;
-	j = 1;
-	while (str[i])
-	{
-		j = i + 1;
-		while (str[i] != str[j] && str[i] > 31 && str[i] != '+' \
-					&& str[i] != '-' && str[j] != '\0')
-		{
-			j++;
-		}
-		if (str[j] == '\0')
-		{
-			i++;
-		}
-		else
-		{
-			return (0);
-		}
-	}
-	return (1);
-}
 
 int		base_len(char *str)
 {
@@ -97,9 +70,9 @@ int		ft_atoi_base(char *str, char *base)
 
 int		main(void)
 {
-	printf("%d\n", ft_atoi_base("-123456", "0123456789"));
+	printf("%d\n", ft_atoi_base("     ----123456", "0123456789"));
 	fflush(stdout);
-	printf("%d\n", ft_atoi_base("11110001001000000", "01"));
+	printf("%d\n", ft_atoi_base("-------11110001001000000", "01"));
 	fflush(stdout);
 	printf("%d\n", ft_atoi_base("-1e240", "0123456789abcdef"));
 	fflush(stdout);
