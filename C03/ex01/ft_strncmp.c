@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_strncmp.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: ybrutout <ybrutout@student.s19.be>         +#+  +:+       +#+        */
+/*   By: ybrutout <ybrutout@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/09/20 20:45:31 by ybrutout          #+#    #+#             */
-/*   Updated: 2020/09/25 07:43:59 by ybrutout         ###   ########.fr       */
+/*   Updated: 2020/11/18 13:12:35 by ybrutout         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,7 +26,7 @@ int		ft_strncmp(char *s1, char *s2, unsigned int n)
 	}
 	if (i == n)
 		return (0);
-	return (si[i] - s2[i]);
+	return (s1[i] - s2[i]);
 }
 
 int		main(void)

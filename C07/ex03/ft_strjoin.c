@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_strjoin.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: ybrutout <ybrutout@student.s19.be>         +#+  +:+       +#+        */
+/*   By: ybrutout <ybrutout@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/09/23 21:05:45 by ybrutout          #+#    #+#             */
-/*   Updated: 2020/09/28 12:20:31 by ybrutout         ###   ########.fr       */
+/*   Updated: 2020/11/24 16:47:58 by ybrutout         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -48,9 +48,7 @@ char	*ft_strjoin(int size, char **strs, char sep)
 	i = 0;
 	j = 0;
 	while (i < size)
-	{
 		j = j + ft_strlen(strs[i++]);
-	}
 	if (size > 0)
 		j = j + ft_strlen(&sep) * (size - 1);
 	dest = malloc(sizeof(char) * j + 1);
@@ -60,7 +58,7 @@ char	*ft_strjoin(int size, char **strs, char sep)
 	{
 		ft_strcpy(&dest[j], strs[i]);
 		j = j + ft_strlen(strs[i]);
-		if ((i + 1) < size )
+		if ((i + 1) < size)
 			ft_strcpy(&dest[j], &sep);
 		i++;
 		j++;

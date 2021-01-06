@@ -3,24 +3,24 @@
 #                                                         :::      ::::::::    #
 #    Makefile                                           :+:      :+:    :+:    #
 #                                                     +:+ +:+         +:+      #
-#    By: ybrutout <ybrutout@student.s19.be>         +#+  +:+       +#+         #
+#    By: ybrutout <ybrutout@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2020/09/28 13:42:51 by ybrutout          #+#    #+#              #
-#    Updated: 2020/09/28 15:47:15 by ybrutout         ###   ########.fr        #
+#    Updated: 2020/11/19 11:20:27 by ybrutout         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
-SRCS		=	ft_putchar.c ft_swap.c ft_putstr.c ft_strlen.c ft_strcmp.c
+NAME		= 	libft.a
+
+SRCS		=	
 
 OBJS		= 	$(addprefix srcs/, ${SRCS:.c=.o})
-
-NAME		= 	libft.a
 
 FLAGS		= 	-Wall -Wextra -Werror
 
 CC			=	gcc
 
-.c.o:
+%.c %.o:
 			${CC} ${FLAGS} -c -I./includes $< -o ${<:.c=.o}
 
 ${NAME}:	${OBJS}
@@ -36,4 +36,4 @@ fclean:		clean
 
 re:			fclean all
 
-.PHONY:		all clean fclean re
+.PHONY:		all clean fclean r
