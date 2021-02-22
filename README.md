@@ -13,7 +13,7 @@ I finished the Piscine with a level 8 of 52%.
 
 ------------------------------
 
-# Points :  
+# Points   
 
 * Shell00 50%  
 * Shell01 85%  
