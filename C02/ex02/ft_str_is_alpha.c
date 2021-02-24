@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_str_is_alpha.c                                  :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: ybrutout <ybrutout@student.s19.be>         +#+  +:+       +#+        */
+/*   By: ybrutout <ybrutout@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/09/15 12:44:06 by ybrutout          #+#    #+#             */
-/*   Updated: 2020/09/25 07:43:17 by ybrutout         ###   ########.fr       */
+/*   Updated: 2021/02/24 14:40:51 by ybrutout         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,13 +27,4 @@ int	ft_str_is_alpha(char *str)
 		i++;
 	}
 	return (1);
-}
-
-int	main(void)
-{
-	char *str;
-
-	str = "bhefwhTYFSuughvd";
-	printf("should be 1: %d", ft_str_is_alpha(str));
-	return (0);
 }

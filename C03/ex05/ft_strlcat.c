@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_strlcat.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: ybrutout <ybrutout@student.s19.be>         +#+  +:+       +#+        */
+/*   By: ybrutout <ybrutout@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/09/17 11:16:39 by ybrutout          #+#    #+#             */
-/*   Updated: 2020/09/25 07:44:12 by ybrutout         ###   ########.fr       */
+/*   Updated: 2021/02/24 14:44:36 by ybrutout         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -39,7 +39,7 @@ unsigned int	ft_strlcat(char *dest, char *src, unsigned int size)
 	j = 0;
 	ft_size(dest, src, &sd, &ssrc);
 	i = sd;
-	if ((int) size >= sd + ssrc - 1)
+	if ((int)size >= sd + ssrc - 1)
 	{
 		while (src[j])
 		{
@@ -48,23 +48,9 @@ unsigned int	ft_strlcat(char *dest, char *src, unsigned int size)
 			j++;
 		}
 		dest[sd] = '\0';
-		size_try = i + ssrc ;
+		size_try = i + ssrc;
 	}
 	else
-		size_try = ssrc + i -1;
+		size_try = ssrc + i - 1;
 	return (size_try);
-}
-
-int				main(void)
-{
-	char dest[20] = "yannah";
-	char src[10] = "loohan";
-	unsigned int size;
-
-	size = 25;
-	printf("dest = %s\n", dest);
-	printf("src = %s\n", src);
-	printf("retourne : %u \n", ft_strlcat(dest, src, size));
-	printf("dest = %s", dest);
-	return(0);
 }

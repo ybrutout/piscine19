@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_strlowcase.c                                    :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: ybrutout <ybrutout@student.s19.be>         +#+  +:+       +#+        */
+/*   By: ybrutout <ybrutout@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/09/15 20:52:35 by ybrutout          #+#    #+#             */
-/*   Updated: 2020/09/25 07:43:40 by ybrutout         ###   ########.fr       */
+/*   Updated: 2021/02/24 14:41:55 by ybrutout         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,9 +14,9 @@
 
 char	*ft_strlowcase(char *str)
 {
-	int i; 
+	int i;
 
-	i = 0; 
+	i = 0;
 	while (str[i])
 	{
 		if (str[i] >= 'A' && str[i] <= 'Z')
@@ -26,13 +26,4 @@ char	*ft_strlowcase(char *str)
 		i++;
 	}
 	return (str);
-}
-
-int		main(void)
-{
-	char str[100]= "HELLOLESFILLESAZ";
-
-	ft_strlowcase(str);
-	printf("%s", str);
-	return (0);
 }

@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_strstr.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: ybrutout <ybrutout@student.s19.be>         +#+  +:+       +#+        */
+/*   By: ybrutout <ybrutout@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/09/17 09:23:49 by ybrutout          #+#    #+#             */
-/*   Updated: 2020/09/25 07:44:08 by ybrutout         ###   ########.fr       */
+/*   Updated: 2021/02/24 14:43:32 by ybrutout         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,13 +18,13 @@
 
 char	*ft_strstr(char *str, char *to_find)
 {
-	int i; 
+	int i;
 
 	if (to_find [0] == '\0')
 	 	return (str);
 	while (*str)
 	{
-	
+
 		if (*str == *to_find)
 		{
 			i = 0;
@@ -38,15 +38,4 @@ char	*ft_strstr(char *str, char *to_find)
 		str++;
 	}
 	return (0);
-}
-
-int		main(void)
-{
-	char str[20] = "hello world";
-	char to_find[15] = "worldghwqg";
-
-	printf("str %s\n", str);
-	printf("to_find %s\n", to_find);
-	printf("pattern : %s\n", ft_strstr(str, to_find));
-	return(0);
 }

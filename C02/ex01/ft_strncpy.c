@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_strncpy.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: ybrutout <ybrutout@student.s19.be>         +#+  +:+       +#+        */
+/*   By: ybrutout <ybrutout@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/09/15 09:38:56 by ybrutout          #+#    #+#             */
-/*   Updated: 2020/09/25 07:43:13 by ybrutout         ###   ########.fr       */
+/*   Updated: 2021/02/24 14:40:39 by ybrutout         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -29,16 +29,4 @@ char	*ft_strncpy(char *dest, char *src, unsigned int n)
 		i++;
 	}
 	return (dest);
-}
-
-int		main(void)
-{
-	char dest[20] = "yannah";
-	char src[50] = "nahamalameilleuredemessoeurs";
-	unsigned int n;
-
-	n = 20;
-	ft_strncpy(dest, src, n);
-	printf("%s" ,dest);
-	return(0);
 }
