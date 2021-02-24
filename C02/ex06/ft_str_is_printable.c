@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_str_is_printable.c                              :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: ybrutout <ybrutout@student.42.fr>          +#+  +:+       +#+        */
+/*   By: ybrutout <ybrutout@student.s19.be>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/09/15 19:15:47 by ybrutout          #+#    #+#             */
-/*   Updated: 2021/02/24 14:41:35 by ybrutout         ###   ########.fr       */
+/*   Updated: 2020/09/25 07:43:33 by ybrutout         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,4 +26,14 @@ int		ft_str_is_printable(char *str)
 		i++;
 	}
 	return (1);
+}
+
+int		main(void)
+{
+	char *str;
+
+	str = "vdewu\nouwcd2565413.,?\t";
+	ft_str_is_printable(str);
+	printf("%d", ft_str_is_printable(str));
+	return (0);
 }

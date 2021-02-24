@@ -6,7 +6,7 @@
 /*   By: ybrutout <ybrutout@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/09/20 20:45:31 by ybrutout          #+#    #+#             */
-/*   Updated: 2020/11/18 13:12:35 by ybrutout         ###   ########.fr       */
+/*   Updated: 2020/09/20 21:07:09 by ybrutout         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,9 +24,17 @@ int		ft_strncmp(char *s1, char *s2, unsigned int n)
 	{
 		i++;
 	}
-	if (i == n)
+	if (s1[i] != s2[i])
+	{
+		j = s1[i] - s2[i];
+	}
+	if (n == 0)
 		return (0);
-	return (s1[i] - s2[i]);
+	else 
+	{
+		j = 0;
+	}
+	return (j);
 }
 
 int		main(void)

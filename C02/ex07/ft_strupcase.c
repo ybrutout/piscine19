@@ -3,14 +3,14 @@
 /*                                                        :::      ::::::::   */
 /*   ft_strupcase.c                                     :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: ybrutout <ybrutout@student.42.fr>          +#+  +:+       +#+        */
+/*   By: ybrutout <ybrutout@student.s19.be>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/09/15 19:34:07 by ybrutout          #+#    #+#             */
-/*   Updated: 2021/02/24 14:41:44 by ybrutout         ###   ########.fr       */
+/*   Updated: 2020/09/25 07:43:36 by ybrutout         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <stdio.h>
+#include <stdio.h> 
 
 char	*ft_strupcase(char *str)
 {
@@ -26,4 +26,13 @@ char	*ft_strupcase(char *str)
 		i++;
 	}
 	return (str);
+}
+
+int		main(void)
+{
+	char str[100] = "24545oiu87ighethgrFSJDTH";
+
+	ft_strupcase(str);
+	printf("%s", str);
+	return (0);
 }

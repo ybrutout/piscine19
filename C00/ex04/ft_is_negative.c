@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_is_negative.c                                   :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: ybrutout <ybrutout@student.42.fr>          +#+  +:+       +#+        */
+/*   By: ybrutout <ybrutout@student.s19.be>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/09/11 17:37:56 by ybrutout          #+#    #+#             */
-/*   Updated: 2021/02/24 14:39:21 by ybrutout         ###   ########.fr       */
+/*   Updated: 2020/09/24 19:34:54 by ybrutout         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,7 +15,11 @@
 void	ft_is_negative(int n)
 {
 	if (n < 0)
+	{
 		write(1, "N", 1);
+	}
 	else
+	{
 		write(1, "P", 1);
+	}
 }

@@ -1,38 +1,26 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strlowcase.c                                    :+:      :+:    :+:   */
+/*   test.c                                             :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: ybrutout <ybrutout@student.s19.be>         +#+  +:+       +#+        */
+/*   By: ybrutout <ybrutout@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2020/09/15 20:52:35 by ybrutout          #+#    #+#             */
-/*   Updated: 2020/09/25 07:43:40 by ybrutout         ###   ########.fr       */
+/*   Created: 2020/09/16 17:25:25 by ybrutout          #+#    #+#             */
+/*   Updated: 2020/09/21 07:49:21 by ybrutout         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <stdio.h>
-
-char	*ft_strlowcase(char *str)
-{
-	int i; 
-
-	i = 0; 
-	while (str[i])
-	{
-		if (str[i] >= 'A' && str[i] <= 'Z')
-		{
-			str[i] = str[i] + 32;
-		}
-		i++;
-	}
-	return (str);
-}
+#include <unistd.h>
+#include <string.h>
 
 int		main(void)
 {
-	char str[100]= "HELLOLESFILLESAZ";
+	char str[20] = "hello world";
+	char to_find[15] = "worldghwqg";
 
-	ft_strlowcase(str);
-	printf("%s", str);
-	return (0);
+	printf("str %s\n", str);
+	printf("to_find %s\n", to_find);
+	printf("pattern : %s\n", strstr(str, to_find));
+	return(0);
 }

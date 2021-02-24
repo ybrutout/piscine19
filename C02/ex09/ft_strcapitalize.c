@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_strcapitalize.c                                 :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: ybrutout <ybrutout@student.42.fr>          +#+  +:+       +#+        */
+/*   By: ybrutout <ybrutout@student.s19.be>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/09/15 21:03:23 by ybrutout          #+#    #+#             */
-/*   Updated: 2021/02/24 14:42:09 by ybrutout         ###   ########.fr       */
+/*   Updated: 2020/09/25 07:43:43 by ybrutout         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -62,4 +62,14 @@ char	*ft_strcapitalize(char *str)
 		i++;
 	}
 	return (str);
+}
+
+int		main(void)
+{
+	char str[100] = "bonJOUr,.,comMEnt vA ? 19ecole hel00Nahama <><>yT ";
+
+	printf("C'était : %s\n", str);
+	ft_strcapitalize(str);
+	printf("C'est : %s\n", str);
+	return (0);
 }

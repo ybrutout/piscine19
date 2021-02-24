@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_str_is_numeric.c                                :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: ybrutout <ybrutout@student.42.fr>          +#+  +:+       +#+        */
+/*   By: ybrutout <ybrutout@student.s19.be>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/09/15 18:20:49 by ybrutout          #+#    #+#             */
-/*   Updated: 2021/02/24 14:41:04 by ybrutout         ###   ########.fr       */
+/*   Updated: 2020/09/25 07:43:20 by ybrutout         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,4 +27,13 @@ int		ft_str_is_numeric(char *str)
 		i++;
 	}
 	return (1);
+}
+
+int	main(void)
+{
+	char *str;
+
+	str = "456564313hughu5635";
+	printf("should be 1: %d", ft_str_is_numeric(str));
+	return (0);
 }

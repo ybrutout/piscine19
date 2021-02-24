@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_str_is_lowercase.c                              :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: ybrutout <ybrutout@student.42.fr>          +#+  +:+       +#+        */
+/*   By: ybrutout <ybrutout@student.s19.be>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/09/15 18:33:03 by ybrutout          #+#    #+#             */
-/*   Updated: 2021/02/24 14:41:16 by ybrutout         ###   ########.fr       */
+/*   Updated: 2020/09/25 07:43:25 by ybrutout         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,4 +27,14 @@ int		ft_str_is_lowercase(char *str)
 		i++;
 	}
 	return (1);
+}
+
+int		main(void)
+{
+	char *str;
+
+	str = "hwbdcbbcZA456.,bhdw";
+	ft_str_is_lowercase(str);
+	printf("%d", ft_str_is_lowercase(str));
+	return (0);
 }
